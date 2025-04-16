@@ -1,0 +1,7 @@
+{
+  "name": "store-finder-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
