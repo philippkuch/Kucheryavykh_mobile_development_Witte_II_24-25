@@ -30,3 +30,15 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+/android
+/ios
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build artifacts / Package files
+*.apk
+*.aab
+*.ipa
