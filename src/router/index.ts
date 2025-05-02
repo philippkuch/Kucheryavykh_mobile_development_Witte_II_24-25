@@ -1,11 +1,16 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import TabsPage from '../views/TabsPage.vue'
+import TabsPage from '../views/TabsPage.vue';
+
+// Импортируем ПОЛНЫЕ версии компонентов
+import OperatorPage from '../views/OperatorPage.vue';
+import SearchPage from '../views/SearchPage.vue';
+import MapPage from '../views/MapPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/tabs/search' // <<< Изменили редирект по умолчанию на Поиск
   },
   {
     path: '/tabs/',
@@ -13,19 +18,22 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: '/tabs/tab1'
+        redirect: '/tabs/search' // <<< Изменили редирект внутри табов на Поиск
       },
       {
-        path: 'tab1',
-        component: () => import('@/views/Tab1Page.vue')
+        path: 'search',
+        name: 'Search',
+        component: SearchPage // <<< Используем полную версию SearchPage
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2Page.vue')
+        path: 'map',
+        name: 'Map',
+        component: MapPage    // <<< Используем полную версию MapPage
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3Page.vue')
+        path: 'operator',
+        name: 'Operator',
+        component: OperatorPage // <<< Используем полную версию OperatorPage
       }
     ]
   }
